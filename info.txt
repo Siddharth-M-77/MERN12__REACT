@@ -1,0 +1,3 @@
+Reconciliation=> there are two type of Reconcialation.
+1st => ReRender
+2nd=>  Updation
