@@ -14,35 +14,36 @@ const FormHandlingUsingRHF = () => {
     reset();
   };
   return (
-    <div className="w-screen h-screen   bg-indigo-600 flex items-center justify-center">
+    <div className="w-screen h-screen   bg-gray-600 flex items-center justify-center">
       <form
         onSubmit={handleSubmit(submitHandler)}
-        className="flex items-center bg-gray-400 opacity-90 text-black min-h-[400px] shadow-md min-w-[400px]  rounded-lg p-10 justify-around gap-5 flex-col"
+        className="flex items-center bg-black opacity-100 text-white min-h-[400px] shadow-md min-w-[400px]  rounded-lg p-10 justify-around gap-5 flex-col"
       >
         <input
-          {...register("fullname", { required: "City is required" })}
+          {...register("fullname", { required: "FullName is required" })}
           type="text"
-          className="px-6 py-2 rounded-lg w-full bg-white"
+          className="px-6 py-2 rounded-lg w-full bg-white text-black"
           placeholder="Fullname"
         />
-        <div className="">
-          {errors.fullname && (
-            <p className="px-4 py-1 text-red-900">{errors.fullname.message}</p>
-          )}
-        </div>
+
+        {errors.fullname && (
+          <p className=" text-red-500">{errors.fullname.message}</p>
+        )}
+
         <input
           type="text"
-          className="px-6 py-2 rounded-lg bg-white w-full"
+          className="px-6 py-2 rounded-lg bg-white w-full text-black"
           placeholder="Email"
-          {...register("email", { required: "City is required" })}
+          {...register("email", { required: "Email is required" })}
         />
-        <div className="">
-          {errors.email && (
-            <p className="px-4 py-1 text-red-900">{errors.email.message}</p>
-          )}
-        </div>
+
+        {errors.email && (
+          <p className=" text-red-500">{errors.email.message}</p>
+        )}
+
         <div className="flex gap-5">
           <input
+          className="px-6 py-2 rounded-lg bg-white w-full text-black"
             {...register("gender", { required: "gender is required" })}
             id="male"
             value={"male"}
@@ -51,17 +52,19 @@ const FormHandlingUsingRHF = () => {
           <label htmlFor="male">Male</label>
           <input
             type="radio"
-            {...register("gender", { required: "City is required" })}
+            {...register("gender", { required: "Gender is required" })}
             id="female"
             value={"female"}
           />
 
-          {errors.gender && <p className="">{errors.gender.message}</p>}
           <label htmlFor="female">Female</label>
         </div>
+        {errors.gender && (
+          <p className="text-red-500 ">{errors.gender.message}</p>
+        )}
         <select
           {...register("city", { required: "City is required" })}
-          className="p-4 w-full bg-white my-6"
+          className="p-4 w-full bg-white my-6 text-black"
         >
           <option value="">City</option>
           <option value="bhopal">Bhopal</option>
@@ -72,11 +75,7 @@ const FormHandlingUsingRHF = () => {
         {errors.city && (
           <p className="px-4 py-1 text-red-900">{errors.city.message}</p>
         )}
-        <input
-          {...register}
-          className="px-6 py-2 rounded-lg bg-red-500"
-          type="submit"
-        />
+        <input className="px-6 py-2 rounded-lg bg-red-500" type="submit" />
       </form>
     </div>
   );
