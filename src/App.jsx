@@ -1,18 +1,12 @@
-import React from 'react'
-import LiveClock from './components/LiveClock'
-import FormHandling from './components/FormHandlingUsingManually'
-import FormHandlingUsingRHF from './components/FormHandlingUsingRHF'
+import React from "react";
+import LiveClock from "./components/LIveClock";
 
 const App = () => {
   return (
-    <div className='w-screen h-screen '>
-      {/* <LiveClock/> */}
-      {/* <FormHandling/> */}
-      <FormHandlingUsingRHF/>
-
-      
+    <div className="w-screen h-screen ">
+      <LiveClock />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

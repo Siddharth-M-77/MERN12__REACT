@@ -7,7 +7,15 @@ const FormHandlingUsingRHF = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      fullname: "Siddharth",
+      email: "sidd@gmail.com",
+      gender: "male",
+      city: "Ujjain",
+
+    },
+  });
 
   const submitHandler = (data) => {
     console.log(data);
@@ -43,7 +51,7 @@ const FormHandlingUsingRHF = () => {
 
         <div className="flex gap-5">
           <input
-          className="px-6 py-2 rounded-lg bg-white w-full text-black"
+            className="px-6 py-2 rounded-lg bg-white w-full text-black"
             {...register("gender", { required: "gender is required" })}
             id="male"
             value={"male"}
@@ -66,11 +74,11 @@ const FormHandlingUsingRHF = () => {
           {...register("city", { required: "City is required" })}
           className="p-4 w-full bg-white my-6 text-black"
         >
-          <option value="">City</option>
           <option value="bhopal">Bhopal</option>
           <option value="Gwalior">Gwalior</option>
           <option value="Noida">Noida</option>
           <option value="Pune">Pune</option>
+          <option value="Ujjain">Ujjain</option>
         </select>
         {errors.city && (
           <p className="px-4 py-1 text-red-900">{errors.city.message}</p>
