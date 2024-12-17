@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import './LiveClock.css'
+// import './LiveClock.css'
+import css from "./LiveClock.module.css"
 
 const LiveClock = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -25,6 +26,7 @@ const LiveClock = () => {
       {/* <h1 className="clock text-9xl font-bold">Live Clock</h1> */}
 
       <h1 className="text-8xl font-semibold mt-12">{time}</h1>
+      <h1 className={css.clock2}>{time}</h1>
     </div>
   );
 };
