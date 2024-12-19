@@ -13,7 +13,7 @@ const formHandling = () => {
       city: city,
       gender: gender,
     };
-    console.log(data);
+
   };
   return (
     <div className="w-screen h-screen   bg-indigo-600 flex items-center justify-center">
