@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Service from "./components/Service";
 import Product from "./components/Product";
+import ProductDetails from "./components/ProductDetails";
 
 const App = () => {
 
@@ -18,7 +19,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Service />} />
         <Route path="/products" element={<Product />} />
-
+        <Route path="/products/:id" element={<ProductDetails />} />
       </Routes>
     </div>
   );
