@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { dataContext } from "./components/DataContext";
 import Nav from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
@@ -9,7 +8,6 @@ import Service from "./components/Service";
 import Product from "./components/Product";
 
 const App = () => {
-  // const [data] = useContext(dataContext)
 
   return (
     <div className="w-screen h-screen mx-auto bg-gray-700 p-4 ">
