@@ -11,17 +11,16 @@ import ProductDetails from "./components/ProductDetails";
 const App = () => {
 
   return (
-    <div className="w-screen h-screen mx-auto bg-gray-700 p-4 ">
+    <div className="w-screen  mx-auto bg-gray-700 p-4 ">
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home/:products" element={<ProductDetails />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Service />} />
         <Route path="/products" element={<Product />} >
-          <Route path="/products/:category" element={<ProductDetails />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
         </Route>
 
       </Routes>
