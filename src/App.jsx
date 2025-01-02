@@ -7,21 +7,28 @@ import Contact from "./components/Contact";
 import Service from "./components/Service";
 import Product from "./components/Product";
 import ProductDetails from "./components/ProductDetails";
+import FetchData from "./components/FetchData";
 
 const App = () => {
 
   return (
-    <div className="w-screen  mx-auto bg-gray-700 p-4 ">
+    <div className="w-screen min-h-screen mx-auto bg-gray-700 p-4 ">
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<FetchData />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Products" element={<Product />} >
 
+          <Route path="products/:id" element={<ProductDetails />} />
+        </Route>
+
+        {/* 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Service />} />
         <Route path="/products" element={<Product />} >
-          <Route path="/products/:id" element={<ProductDetails />} />
-        </Route>
+          <Route path="/products/:id" element={<ProductDetails />} /> */}
+        {/* </Route> */}
 
       </Routes>
     </div >
