@@ -24,7 +24,7 @@ const Product = () => {
         <div className='grid grid-cols-6 gap-5 items-center justify-center'>
           {
             products.map((p, i) => {
-              return <Link key={p.id} className='p-2 flex  flex-col items-center justify-center h-80 bg-gray-500 text-white' to={`products/${p.id}`}>{p.title}
+              return <Link key={p.id} className='p-2 flex  flex-col items-center justify-around h-96 bg-gray-500 text-white' to={`products/${p.id}`}>{p.title}
                 <img className='w-72 h-fit' src={p.image} alt="" />
               </Link>
             })

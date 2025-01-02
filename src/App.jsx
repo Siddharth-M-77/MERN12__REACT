@@ -8,6 +8,7 @@ import Service from "./components/Service";
 import Product from "./components/Product";
 import ProductDetails from "./components/ProductDetails";
 import FetchData from "./components/FetchData";
+import Todo from "./components/Todo";
 
 const App = () => {
 
@@ -15,12 +16,13 @@ const App = () => {
     <div className="w-screen min-h-screen mx-auto bg-gray-700 p-4 ">
       <Nav />
       <Routes>
-        <Route path="/" element={<FetchData />} />
+        <Route path="/" element={<Todo />} />
+        {/* <Route path="/" element={<FetchData />} />
         <Route path="/About" element={<About />} />
         <Route path="/Products" element={<Product />} >
 
           <Route path="products/:id" element={<ProductDetails />} />
-        </Route>
+        </Route> */}
 
         {/* 
         <Route path="/about" element={<About />} />
