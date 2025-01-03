@@ -2,7 +2,7 @@ import axios from '../utils/axiosConfig'
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import { setProducts } from '../Store/Slice/ProductSlice'
+import { deleteProducts, setProducts } from '../Store/Slice/ProductSlice'
 
 const Home = () => {
   const { products } = useSelector(store => store.products)
@@ -17,14 +17,17 @@ const Home = () => {
       description: "mai hu na"
     }
     dispatch(setProducts(data))
-
+  }
+  const deleteHandler = () => {
+    dispatch(deleteProducts())
   }
 
   return (
     <div>
 
       <div className='w-full flex flex-col min-h-screen gap-6 items-center justify-center mt-10'>
-        <button onClick={addData} className='px-6 py-2 bg-black text-white'>Get Data From API</button>
+        <button onClick={addData} className='px-6 py-2 bg-black text-white'>Get Add Data In Products</button>
+        <button onClick={deleteHandler} className='px-6 py-2 bg-black text-white'>Get Delete Data From Products</button>
         <h1 className='text-2xl'>Total Products : {products.length}</h1>
         {/* <div className='flex flex-col gap-5'>
           {
