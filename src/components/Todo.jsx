@@ -4,7 +4,6 @@ const Todo = () => {
     const [todos, setTodos] = useState([])
     const [editId, setEditId] = useState(null)
     const [formData, setFormData] = useState({ first: "", name: "", email: "", phone: "" })
-    console.log(todos)
 
     const handleChange = (e) => {
         const { name, value } = e.target

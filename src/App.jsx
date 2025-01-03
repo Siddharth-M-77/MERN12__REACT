@@ -13,10 +13,10 @@ import Todo from "./components/Todo";
 const App = () => {
 
   return (
-    <div className="w-screen min-h-screen mx-auto bg-gray-700 p-4 ">
+    <div className="w-screen mx-auto bg-gray-700 p-4 ">
       <Nav />
       <Routes>
-        <Route path="/" element={<Todo />} />
+        <Route path="/" element={<Home />} />
         {/* <Route path="/" element={<FetchData />} />
         <Route path="/About" element={<About />} />
         <Route path="/Products" element={<Product />} >
