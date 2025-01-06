@@ -1,13 +1,10 @@
-import axios from '../utils/axiosConfig'
-import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteProducts, setProducts } from '../Store/Slice/ProductSlice'
+import { setProducts, deleteProducts, asyncRemoveProduct } from '../Store/Actions/productActions';
 
 const Home = () => {
   const { products } = useSelector(store => store.products)
-  const dispatch = useDispatch()
-  console.log(products)
+  const dispatch = useDispatch();
+  console.log(products);
 
 
   const addData = () => {
@@ -22,12 +19,14 @@ const Home = () => {
     dispatch(deleteProducts())
   }
 
+
   return (
     <div>
 
       <div className='w-full flex flex-col min-h-screen gap-6 items-center justify-center mt-10'>
         <button onClick={addData} className='px-6 py-2 bg-black text-white'>Get Add Data In Products</button>
         <button onClick={deleteHandler} className='px-6 py-2 bg-black text-white'>Get Delete Data From Products</button>
+        <button onClick={() => dispatch(asyncRemoveProduct(1))} className='px-6 py-2 bg-black text-white'> Delete Data AyncHronusly From Products</button>
         <h1 className='text-2xl'>Total Products : {products.length}</h1>
         {/* <div className='flex flex-col gap-5'>
           {

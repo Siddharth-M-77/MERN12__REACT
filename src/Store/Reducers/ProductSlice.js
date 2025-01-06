@@ -34,8 +34,11 @@ const productSlice = createSlice({
     deleteProducts: (state, action) => {
       state.products.pop(action.payload);
     },
+    removeProduct: (state, action) => {
+      state.products.splice(action.payload, 1);
+    },
   },
 });
 
 export default productSlice.reducer;
-export const { setProducts,deleteProducts } = productSlice.actions;
+export const { setProducts, deleteProducts,removeProduct } = productSlice.actions;
